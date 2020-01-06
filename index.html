@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<!--
+	Modified from Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title>CurbLR</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:600&display=swap" rel="stylesheet">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="apple-touch-icon" sizes="180x180" href="images/logo/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/logo/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/logo/favicon/favicon-16x16.png">
+		<link rel="manifest" href="images/logo/favicon/site.webmanifest">
+		<link rel="mask-icon" href="images/logo/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="images/logo/favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="images/logo/favicon/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo/curblr_logo_notext.png" alt="" width="180"/></span>
+						<h1>CurbLR</h1>
+						<p style="margin-bottom: 1em">An open data specification for curb regulations</p>
+						<ul class="icons" style="margin-bottom: 1em">
+              <li><a href="https://github.com/sharedstreets/curblr" title="GitHub (code repository)" class="icon fa-github fa-sm"><span class="label">GitHub</span></a></li>
+							<li><a href="mailto:emily@transportpartnership.org" title="E-mail" class="icon fa-envelope-o fa-sm"><span class="label">E-mail</span></a></li>
+            </ul>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Intro</a></li>
+							<li><a href="#why">Why CurbLR?</a></li>
+														<li><a href="#approach">Approach</a></li>
+                            <li><a href="#data-model">Data model</a></li>
+                            <li><a href="#supporters">Supporters</a></li>
+                            <li><a href="#tools">Tools & resources</a></li>
+                            <li><a href="#community">Get involved</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>About</h2>
+										</header>
+										<p>CurbLR is a data standard for describing curb regulations. It uses a simple structure to store complex restrictions and conditions regarding where different users can park, load, or stop their vehicles at different days and times. The CurbLR specification exists to help government agencies effectively manage and regulate the curbside, and to support public and private users of city streets.</p>
+										<p>CurbLR is a common language on which many things can be built, including rules engines, query APIs, consumer notification services, mapping tools, and analytic models. It uses linear referencing to link regulation information back to the street, making it easy for government agencies and third parties to use this data with their own maps.</p>
+									</div>
+								</div>
+							</section>
+
+	                    <!-- Why? -->
+							<section id="why" class="main special">
+								<header class="major">
+									<h2>Why do we need a data standard for curbs?</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon major style1 fa-university"></span>
+										<h3>Government agencies</h3>
+										<p>Demand for access to the curbside has skyrocketed in urban areas. CurbLR provides a template for cities to create a digital inventory of their curb regulations, which can be used to analyze the present and reimagine the future of this public space.</p>
+									</li>
+									<li>
+										<span class="icon major style3 fa-wrench"></span>
+										<h3>Developers</h3>
+										<p>The CurbLR specification enables engineers to ingest curbside inventory data from any city in the world, preventing the need to build custom tools or services for different jurisdictions.</p>
+									</li>
+									<li>
+										<span class="icon major style2 fa-map-marker"></span>
+										<h3>Transportation services</h3>
+										<p>It's no secret that the curbside can be chaotic. A standardized curb inventory allows mobility operators, TNCs, delivery services, and parking payment companies to build services that make it seamless for their users to find and use curbspace.</p>
+									</li>
+								</ul>
+							</section>
+
+<!-- Anchored, resizable container image -->
+
+							<section id="viewer">
+									<div class="hero-image">
+										<img src="images/curblr_viewer.png" srcset="images/curblr_viewer@2x.png 2x" height="580"></img>
+										<a href="https://github.com/sharedstreets/curblr#data-model" class="button">Example CurbLR data and viewer</a>
+									</div>
+							</section>
+
+<!-- Approach -->
+								<section id="approach" class="main">
+									<div class="spotlight">
+										<div class="content">
+											<header class="major">
+												<h2>Approach</h2>
+											</header>
+											<p>
+												Curb regulations are communicated by physical assets like parking signs, meters, and curb paint. These have a specific set of coordinates and are easy to map. But the concepts they convey are more difficult. For example, a pair of parking signs are more than just two independent points; they represent an invisible rule that applies to a specific section of a particular edge of a specific street. Curb regulations are <b>regulatory geometries</b>, not physical geometries.</p>
+												<p>To handle this, CurbLR uses point-based asset data as the building blocks for the spec, but supplements that with additional <b>location information</b> and <b>structure</b>. First, CurbLR includes linear references that relate assets to their location along a street, using the <a href="https://medium.com/sharedstreets/how-the-sharedstreets-referencing-system-works-2097b0d61b52">SharedStreets Referencing System</a>. In addition, it provides a template to store structured data about the curb rule itself, including what is being restricted or allowed, when a rule applies and for whom, how it is applied, and how it relates to overlapping regulations. This makes it easy to map curb regulations anywhere in the world.</p>
+										</div>
+									</div>
+									<footer class="major" align="center">
+										<ul class="actions">
+											<li><a href="https://github.com/sharedstreets/curblr#approach" class="button">Learn more</a></li>
+											<li><a href="https://github.com/sharedstreets/curblr#design-principles" class="button">Design principles</a></li>
+											<li><a href="https://github.com/sharedstreets/curblr#data-model" class="button">The spec</a></li>
+										</ul>
+									</footer>
+								</section>
+
+							<section id="data-model" class="main">
+							<div class="main">
+								<div class="content">
+								<header class="major">
+									<h2>Data model</h2>
+								</header>
+									<p style="text-align: left;">A CurbLR feed is a JSON file that contains:</p>
+
+									<p>
+										<ol style="display: inline-block; text-align: left;">
+											<li style="padding-bottom: 1.5em;"><b><a href="https://github.com/sharedstreets/curblr/blob/master/Manifest.md">A manifest</a></b>, which includes metadata about when the CurbLR feed was created and updated, the relevant timezone and local authority, and what measurement units are used.</li>
+											<li><b>A GeoJSON Feature Collection</b>, which includes each section of curb and the regulations that apply to it. Each GeoJSON feature in the collection must be a LineString that includes the following:</li>
+										</ol>
+										<ul style="text-align: left; margin-left: 60pt;">
+											<li>The <b><a href="https://github.com/sharedstreets/curblr/blob/master/GeoJsonGeometry.md">GeoJSON feature geometry</a></b></li>
+											<li><b><a href="https://github.com/sharedstreets/curblr/blob/master/Location.md">Location properties</a></b>, which include the SharedStreets Reference ID, location start and end, side of street, marker type, and other pertinent location information.</li>
+											<li><b><a href="https://github.com/sharedstreets/curblr/blob/master/Regulations.md">Regulations</a></b>, which contain the structured properties about any regulations that apply to that section of the curbside. A regulation is comprised of a <b><a href="https://github.com/sharedstreets/curblr/blob/master/Rule.md">rule </a></b> (what is permitted or restricted), as well as any applicable restrictions about <b><a href="https://github.com/sharedstreets/curblr/blob/master/UserClasses.md">user classes</a></b> (including modes, permits, vehicle dimensions, or user types), <b><a href="https://github.com/sharedstreets/curblr/blob/master/TimeSpans.md">time spans</a></b> when the rule is in effect, and <b><a href="https://github.com/sharedstreets/curblr/blob/master/Payment.md">payment terms</a></b>. Each regulation also includes a <b><a href="https://github.com/sharedstreets/curblr/blob/master/Priority.md">priority level</a></b>, which indicates which regulation takes precedence if there are others overlapping it.</li>
+										</ul>
+								</p>
+								<p style="text-align: left;">
+								The links below provide more information about the data model and show real-world signs that have been translated into CurbLR format.
+								</p>
+								</header>
+								<footer class="major" align="center">
+									<ul class="actions">
+                    <li><a href="https://github.com/sharedstreets/curblr#data-model" class="button">Learn more</a></li>
+										<li><a href="https://github.com/sharedstreets/curblr/blob/master/examples/simple_examples.md" class="button">Simple examples</a></li>
+										<li><a href="https://github.com/sharedstreets/curblr/blob/master/examples/complex_examples.md" class="button">Complex examples</a></li>
+									</ul>
+								</footer>
+							</div>
+						</div>
+							</section>
+
+                        <!-- supporters -->
+              <section id="supporters" class="main">
+									<header class="major">
+										<h2>Supporters</h2>
+									</header>
+                            <p>CurbLR is supported by an active community of city planning and transportation professionals, with involvement from a range of organizations:</p>
+														<img src="images/curblr_logos.png" width=90% />
+
+                            </section>
+
+                            <!-- implementation Section -->
+							<section id="tools" class="main">
+								<header class="major">
+									<h2>CurbLR tools</h2>
+								</header>
+                  <p> A range of open-source tools help facilitate the creation and use of curb regulation data in the CurbLR specification, including: </p>
+									<ul>
+					                    <li><a href="https://medium.com/sharedstreets/how-the-sharedstreets-referencing-system-works-2097b0d61b52">SharedStreets Referencing System</a>, a linear-referencing system for streets</li>
+                                        <li><a href="https://github.com/sharedstreets/sharedstreets-js">SharedStreets Command Line Interface (CLI)</a>, a JS library for referencing and processing asset data into regulatory geometries
+                                        <li><a href="https://github.com/sharedstreets/curblr/blob/master/conversions/Portland/geojson_to_curblr.js">CurbLR conversion scripts</a>, which can take output from the CLI and convert it into a CurbLR feed
+                                        <li><a href="https://github.com/sharedstreets/curb-map">CurbLR Viewer</a>, an interactive map to visualize CurbLR feeds and display key stats for specific time periods
+                                    </ul>
+								 </section>
+
+                        <!-- community -->
+                <section id="community" class="main">
+								<header class="major">
+									<h2>Get involved</h2>
+								</header>
+									<p>There are a variety of ways to get involved with CurbLR, such as providing input on the spec, building tools, or testing out methods. We strive to be open and collaborative. The button below will take you to the CurbLR GitHub page, where you can create an issue to let us know about requests, suggestions, or problems. You can also <a href="mailto:emily@transportpartnership.org">reach out</a> to the <a href="https://www.sharedstreets.io">SharedStreets team</a> for more specific or private inquiries.
+                    <ul class="actions" align="center">
+											<li><a href="https://github.com/sharedstreets/curblr" class="button">Go to Github</a></li>
+										</ul>
+									</p>
+                </section>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
