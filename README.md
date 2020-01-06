@@ -4,4 +4,4 @@ This is the repository that controls the website for the [CurbLR specification](
 
 It is pure html/css, published with github pages.
 
-This website template was borrowed from [STAC Spec](https://www.stacspec.org) with our compliments.
+This website template was borrowed from [STAC Spec](https://stacspec.org/) with our compliments.
