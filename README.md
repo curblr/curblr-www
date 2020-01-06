@@ -1,5 +1,7 @@
-# stac-site
+# curblr-www
 
-This is the repository that controls website for the [SpatioTemporal Asset Catalog spec](http://github.com/radiantearth/stac-spec) website, found at [stacspec.org](http://stacspec.org). 
+This is the repository that controls the website for the [CurbLR specification](http://github.com/sharedstreets/curblr). It is found at [curblr.org](http://curblr.org). 
 
-It is pure html/css, published with github pages. To contribute just make a pull request against master. If you don't see response in a couple days then feel free to poke the maintainers on our [gitter channel](https://gitter.im/SpatioTemporal-Asset-Catalog/Lobby)
+It is pure html/css, published with github pages.
+
+This website template was borrowed from [STAC Spec](https://www.stacspec.org) with our compliments.
